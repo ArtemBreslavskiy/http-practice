@@ -9,6 +9,7 @@ namespace ConsoleApp21
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
