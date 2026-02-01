@@ -52,5 +52,23 @@ namespace http_practice.Services
                 throw;
             }
         }
+
+        public async Task<HttpResponce> CreateAsync(CommentDto comment)
+        {
+            try
+            {
+                return await _http.PutAsJsonAsync<CommentDto>("/api/posts", comment);
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine($"Error HTTP request: {ex.Message}");
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error get all users: {ex.Message}");
+                throw;
+            }
+        }
     }
 }
