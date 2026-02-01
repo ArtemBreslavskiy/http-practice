@@ -3,27 +3,24 @@ using http_practice.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Json;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace http_practice.Services
+namespace ConsoleApp21.Services
 {
-    internal class UserService
+    internal class CommentServices
     {
         private readonly HttpClient _http;
 
-        public UserService()
+        public CommentServices()
         {
             _http = ApiClient.Instance;
         }
 
-        public async Task<List<UserDto>> GetAllAsync()
+        public async Task<List<PostDto>> GetAllAsync()
         {
             try
             {
-                return await _http.GetFromJsonAsync<List<UserDto>>("/api/users");
+                return await _http.GetFromJsonAsync<List<PostDto>>("/api/posts");
             }
             catch (HttpRequestException ex)
             {
