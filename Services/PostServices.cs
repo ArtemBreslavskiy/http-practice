@@ -1,12 +1,8 @@
-﻿using http_practice.Dto;
-using http_practice.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security.Cryptography.X509Certificates;
+using http_practice.Dto;
+using http_practice.Infrastructure;
 
 namespace http_practice.Services
 {
@@ -35,6 +31,8 @@ namespace http_practice.Services
                 Console.WriteLine($"Error get all users: {ex.Message}");
                 throw;
             }
+
+            
         }
     }
 }
